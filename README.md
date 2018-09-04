@@ -17,7 +17,7 @@ Edit : Create file
 * Match Percentage : 88.76%  
 
 ========================  
-Date : 2018.09.04. 23:07:00
+Date : 2018.09.04. 23:07:00  
 Edit :  
 - add comparing "minute"
   
