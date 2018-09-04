@@ -6,13 +6,25 @@ CATALOG : SASA_Personal_Research > processing_data
 
 ## 1. DATA Reliability Check(데이터 신뢰도 평가)  
 Project : 수집한 NOAA 데이터와 USGS 데이터를 비교하여 NOAA 데이터의 신뢰도를 판단한다    
-Date : 2018.09.04. 22:44:00 (last edit)  
-Edit : None  
+  
+Date : 2018.09.04. 22:44:00  
+Edit : Create file  
   
 ========= RESULT =========  
 * NOAA data_size : 1016  
 * USGS data_size : 40958  
 * Matches : 906
 * Match Percentage : 88.76%  
+
+========================  
+Date : 2018.09.04. 23:07:00
+Edit :  
+- add comparing "minute"
+  
+========= RESULT =========  
+* NOAA data_size : 1016  
+* USGS data_size : 40958  
+* Matches : 858
+* Match Percentage : 84.44882%  
 
 ========================  
