@@ -12,7 +12,7 @@ Edit : Create file
   
 ========= RESULT =========  
 * NOAA data_size : 1016  
-* USGS data_size : 40958  
+* USGS data_size : 409283  
 * Matches : 906
 * Match Percentage : 88.76%  
 
@@ -23,7 +23,7 @@ Edit :
   
 ========= RESULT =========  
 * NOAA data_size : 1016  
-* USGS data_size : 40958  
+* USGS data_size : 409283  
 * Matches : 858
 * Match Percentage : 84.44882%  
 
