@@ -6,7 +6,7 @@ CATALOG : SASA_Personal_Research > parsing_data
 
 ## 1. USGS_Earthquakes data
 Project : USGS 에서 제공하는 데이터를 저장해둠   
-URL : https://earthquake.usgs.gov/earthquakes/feed/  
+URL : https://earthquake.usgs.gov/earthquakes/search/    
 Specific : 데이터의 특성  
   *강도()이상, 위치() 등  
   
