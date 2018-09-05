@@ -40,3 +40,15 @@ Edit :
 * Match Percentage : 95.47244%  
 
 ========================  
+Date : 2018.09.05. 17:55:00  
+Edit :  
+- find missed data on USGS
+( find similar data )
+  
+========= RESULT =========  
+* NOAA data_size : 1016  
+* USGS data_size : 429200  
+* Matches : 1004 
+* Match Percentage : 98.8189%  
+
+========================  
