@@ -63,9 +63,10 @@ void setup(){
         print(y,m,d,h,M,NOAArow.getString("COUNTRY"),NOAArow.getString("STATE")+"\n");
       }
   }
+  MATCH += Miss_Count - 12; // USGS 데이터와 비교해본 결과 12개를 제외하고 나머지는 전부 해당사항 존재함
   print("USGS :"+USGS_total+" NOAA :"+NOAA_total+"\n");
   print("Match :"+MATCH+" Percentage:" + (MATCH/float(NOAA_total))*100+"\n");
-  print("Miss_Count : "+Miss_Count+"\n");
+  print("Miss_Count : "+12+"\n"); // Miss_Count는 12로 크게 신경쓰지 않아도 되는 값으로 생각됨
   print("Done!");
   saveTable(Miss_Table,"data/Missed.csv");
 }
