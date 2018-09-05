@@ -33,7 +33,7 @@ URL : https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1
 Specific : 데이터의 특성(significant earthquake의 조건)  
    *강도()이상, 위치() 등
    
-Date : 2018.08.29
+Date : 2018.08.29  
 Edit :  
   *parsing data  
   *create file  
