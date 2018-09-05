@@ -5,9 +5,12 @@ CATALOG : SASA_Personal_Research > parsing_data
 본 연구에서의 데이터 추출 과정은 크게 ***2가지 과정*** 을 거친다. 
 
 ## 1. USGS_Earthquakes data
-Project : 수집한 NOAA 데이터와 USGS 데이터를 비교하여 NOAA 데이터의 신뢰도를 판단한다    
+Project : USGS 에서 제공하는 데이터를 저장해둠   
 URL : https://earthquake.usgs.gov/earthquakes/feed/  
-Date : 2018.05.15.   
+Specific : 데이터의 특성  
+  *강도()이상, 위치() 등  
+  
+Date : 2018.05.15   
 Edit :  
   *parsing data  
   *create file  
@@ -24,3 +27,13 @@ Edit :
     
 =========================  
 
+## 2. NOAA_significant_Earthquakes data  
+Project : NOAA에서 제공하는 데이터를 저장해둠  
+URL : https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1  
+Specific : 데이터의 특성(significant earthquake의 조건)  
+   *강도()이상, 위치() 등
+   
+Date : 2018.08.29
+Edit :  
+  *parsing data  
+  *create file  
