@@ -5,8 +5,9 @@ CATALOG : SASA_Personal_Research > processing_data
 본 연구에서의 데이터 가공 과정은 크게 ***3가지 과정*** 을 거친다. 
 
 ## 1. DATA Reliability Check(데이터 신뢰도 평가)  
-Project : 수집한 NOAA 데이터와 USGS 데이터를 비교하여 NOAA 데이터의 신뢰도를 판단한다    
-  
+Project :   
+수집한 NOAA 데이터와 USGS 데이터를 비교하여 NOAA 데이터의 신뢰도를 판단한다    
+신뢰도만을 평가하기 위해 USGS(raw_data)와 NOAA(time,country)를 이용하였다  
 Date : 2018.09.04. 22:44:00  
 Edit : Create file  
   
@@ -43,7 +44,8 @@ Edit :
 Date : 2018.09.05. 17:55:00  
 Edit :  
 - find missed data on USGS
-( find similar data )
+( find similar data )  
+- 매칭을 찾은 결과는 Missed_Matches.xlsx  
   
 ========= RESULT =========  
 * NOAA data_size : 1016  
