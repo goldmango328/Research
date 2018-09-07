@@ -57,7 +57,7 @@ Edit :
 
 ## 2. NOAA data processing(NOAA 데이터 가공작업)  
 Project :   
-(1) country data :: 국가별 지진 발생 데이터 정리  
+(1) country data :: 국가별 지진 발생 데이터 정리  >> NOAA_country  
 (2) year data :: 연도별/월별 시간대에 따른 지진 발생량 데이터 정리  
 Date : 2018.09.07 11:13:26  
 Edit : Create file  
