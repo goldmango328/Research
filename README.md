@@ -26,6 +26,13 @@ Edit :
     -2005.07.01-2005.12.31  
     
 =========================  
+   Date : 2018.09.17  
+   Edit :  
+    *Problems with data  
+    *missing data  
+    -2011.01.01-2011.06.30  
+    (Personal_Research>DATA에 없었음)  
+    
 
 ## 2. NOAA_significant_Earthquakes data  
 Project : NOAA에서 제공하는 데이터를 저장해둠  
