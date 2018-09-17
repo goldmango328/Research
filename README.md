@@ -67,4 +67,21 @@ Date : 2018.09.07 23:18:00
 Edit :  
 - create file(NOAA_country / NOAA_year)  
 - create codes  
+==============================  
+Date : 2018.09.10 16:29:00  
+Edit : 
+- create codes(Make_NOAA_countrylist)
+- 전체 국가수 :: **96 개국**  
 
+
+## 3. Ranking NOAA data(NOAA 데이터 순위)  
+Project :  
+연도별로 가공된 데이터를 원하는 속성에 맞추어서 국가별 순위 통계를 낸다.  
+속성 : earthquakes / deaths / missing / injuries / damage_million_dollars / house_destroyed / house_damaged  
+Date : 2018.09.17 14:09:00  
+Edit : Create file  
+
+==============================  
+Date : 2018.09.12 15:14:00  
+Edit :  
+- create codes(Ranking_NOAA_year/ rank_EQ / rank_general)  
