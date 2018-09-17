@@ -86,3 +86,5 @@ Edit : Create file
 Date : 2018.09.12 15:14:00  
 Edit :  
 - create codes(Ranking_NOAA_year/ rank_EQ / rank_general)  
+- save data (format : NOAA_ranking[year-2000])  
+
