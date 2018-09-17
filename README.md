@@ -59,6 +59,7 @@ Edit :
 Project :   
 (1) country data :: 국가별 지진 발생 데이터 정리  >> NOAA_country  
 (2) year data :: 연도별/월별 시간대에 따른 지진 발생량 데이터 정리 > NOAA_year  
+(3) USGS_year data :: 연도별 시간대에 따른 지진 발생량 데이터 병함 > USGS_year
 Date : 2018.09.07 11:13:26  
 Edit : Create file  
 
@@ -74,6 +75,13 @@ Edit :
 - create codes(Make_NOAA_countrylist)  
 - 전체 국가수 :: **96 개국**  
   
+==============================  
+Date : 2018.09.17 23:39:52  
+Edit :
+- create file(USGS_year)  
+- create codes(Making_USGS_year)  
+- processed data(format :: USGS_year[0])  
+
 
 ## 3. Ranking NOAA data(NOAA 데이터 순위)  
 Project :  
