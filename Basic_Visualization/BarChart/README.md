@@ -1,6 +1,7 @@
 # BarChart  
 Project : 
 Vertical Bar Chart 와 Horizontal Bar Chart의 구현  
+Date : 2018.09.18 20:55:32  
 Edit :  
 *Create File  
 *Create CODES  
