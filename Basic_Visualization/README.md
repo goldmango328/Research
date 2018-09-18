@@ -1,6 +1,6 @@
 # Basic Visualization  
 자율연구에서 데이터의 실질적인 시각화에 이용하기 위한 연습 코드(기초 차트 구현)    
-종류 : BarChart / 
+종류 : BarChart / PieChart / StackedBarChart /  
 
 ## BarChart  
 Project : 
