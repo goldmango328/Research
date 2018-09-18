@@ -20,3 +20,8 @@ Figure. (left) Vertical Bar Chart (right) Horizontal Bar Chart
 
 ## PieChart  
 Project :   
+Date :  
+Edit :  
+추가 개선점 :  
+
+### PieChart :: ScreenShots  
