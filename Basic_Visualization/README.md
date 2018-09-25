@@ -31,3 +31,5 @@ Edit :
 - legend를 일일이 타이핑해서 구현해줘야하는 방법에 대해서 개선의 필요성이 있음  
 
 ### StackedBarChart :: ScreenShots  
+![stackedbarchart_screenshot](https://user-images.githubusercontent.com/42968884/46016736-82080000-c110-11e8-8b9e-6a9d084fb89d.JPG)
+Figure. Stacked BarChart (right side) Legend  
