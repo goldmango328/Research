@@ -96,3 +96,10 @@ Edit :
 - create codes(Ranking_NOAA_year/ rank_EQ / rank_general)  
 - save data (format : NOAA_ranking[year-2000])  
 
+==============================  
+Date : 2018.09.27 22:06:23  
+Specific : NOAA 데이터를 총합해서 통계를 낸 자료  
+Edit :  
+- create codes(Ranking_NOAA_total / rank_EQ / rank_general / Sorting)  
+- save data (format : NOAA_total)  
+
