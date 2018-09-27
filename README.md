@@ -5,4 +5,7 @@ https://github.com/sejong-interface/Interface_Manual/wiki/Git-%EC%8B%9C%EC%9E%91
 
 # Personal_Research :: DATA  
 연구에서 이용한 데이터의 종류/속성    
-  - NOAA : 
+  - NOAA  
+    https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1   
+  - International Disaster Charter  
+    https://disasterscharter.org/web/guest/activations/-/article/earthquake-in-indonesia-activation-580-  
