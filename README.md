@@ -81,6 +81,12 @@ Edit :
 - create file(USGS_year)  
 - create codes(Making_USGS_year)  
 - processed data(format :: USGS_year[0])  
+  
+==============================  
+Date : 2018.10.24 13:41:00  
+Edit :  
+- rewrite codes(Making_NOAA_year)  
+- add column YEAR,MONTH,DAY,HOUR,MINUTE,SECOND (TIME)  
 
 
 ## 3. Ranking NOAA data(NOAA 데이터 순위)  
