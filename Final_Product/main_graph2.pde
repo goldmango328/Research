@@ -38,7 +38,9 @@ void draw_graph2(){
     strokeWeight(1);
     line(timelineX,timelineY-timeline_smallgap,timelineX,timelineY+timeline_smallgap);  
     
+    fill(255);
     textFont(tab_font);
+    textAlign(CENTER,CENTER);
     textSize( year == start_year || year == end_year ? 15: 10);
     text(str(year),timelineX,timelineY+timeline_gap+timetext_gap);
   }
@@ -58,8 +60,8 @@ void draw_graph2(){
   
   for(int year = start_year ; year <= end_year ; year++){
     for(TableRow row : NOAA_year[year-2000].rows()){
-      //float raw_value = row.getFloat("EQ_primary");
-      float raw_value = row.getFloat("deaths");
+      float raw_value = row.getFloat("EQ_primary");
+      //float raw_value = row.getFloat("deaths");
       int years = row.getInt("year");
       int months = row.getInt("month");
       int days = row.getInt("day");
@@ -67,13 +69,20 @@ void draw_graph2(){
       float x = map(total_days,0,360*(end_year-start_year+1),timeline_sx,timeline_ex);
       float value = map(raw_value,5,10,1,30);
       
-      //fill(typeColor[0],50);
-      fill(typeColor[1],50);
+      fill(typeColor[0],100); // -> value에 따른 명도 조절까지
+      //fill(typeColor[1],50);
       noStroke();
       ellipseMode(CENTER);
       ellipse(x,timelineY,value,value);
-      println(years+":"+months+":"+days+". values:"+raw_value+"\n");
+      // println(years+":"+months+":"+days+". values:"+raw_value+"\n");
     }
   }
+   
       
+  // NEED TO BE DEVELOPED (3) MESSAGE 남기기
+  fill(255,40);
+  rect(main_section[3][0], height-60, width-40,height-40);
+  fill(255);
+  textAlign(LEFT,CENTER);
+  text("NEED TO BE DEVELOPED(3)",main_section[3][0]+10,height-50);
 }
