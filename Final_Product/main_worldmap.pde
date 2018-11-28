@@ -46,7 +46,7 @@ void control_worldmap(){
   texttabboxRight[1] = texttabboxRight[0];
   
   noStroke();
-  fill(TAB_COLOR);
+  fill(TAB_color);
   rectMode(CORNERS);
   rect(tabboxLeft[0],tabbox_top,tabboxRight[0],tabbox_bottom);
   rect(tabboxLeft[1],tabbox_top+tabbox_height+10,tabboxRight[1],tabbox_bottom+tabbox_height+10);
