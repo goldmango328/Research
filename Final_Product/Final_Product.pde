@@ -1,7 +1,16 @@
 // Main Page : total
 // Main Page(key) : 'M'
 // Sub Page : specific data
-// Sub Page(key): 'S' > 보고싶은 국가를 선택 or SubPgae로 들어가는 방식으로
+// Sub Page(key): 'S' > 보고싶은 국가를 선택 or SubPage로 들어가는 방식으로
+
+// MainPage  에서는 무엇을 보여줄 것인지? theme : world data
+/*
+1) main_graph1 : 월별 선택한 속성의 그래프(barchart)
+2) main_graph2 : 지진이 발생한 사건(bubble chart)
+*/
+// SubPage   에서는 무엇을 보여줄 것인지? theme : country data
+/*
+*/
 
 int page = 0; // Main = 0, Sub = 1
 int show_grid = -1; //show_grid=1, dont_show_grid=-1
@@ -26,12 +35,18 @@ int end_year = 2017;
 boolean start_change = false; // boolean param asking to change start_year
 boolean end_change = false; // boolean param asking to change end_year
 
-Table[] NOAA_year = new Table[18];
+Table[] NOAA_year = new Table[18]; // 선택하는 년도에 따른 데이터
+Table[] NOAA_country = new Table[97]; // 선택하는 국가에 따른 데이터
 
 PFont title_font;
 PFont tab_font;
 
-color TAB_COLOR = #FA7E7E;
+color TAB_color = #FA7E7E;
+color GRID_color = color(200);
+color BOX_color = color(38,177,250);
+
+String[] columnName = {"DH","MS","IN","DD","HT","HM"};
+int selectedColumn = 0;
 
 void setup(){
   size(1800,800);
@@ -58,8 +73,8 @@ void draw(){
   draw_titletabs(); // title tab을 보여주는 함수
   show_page();
   
-  print("start_year:"+start_year+" | start_change:"+ start_change);
-  print(" end_year:"+end_year+" | end_change:"+ end_change);
+  // print("start_year:"+start_year+" | start_change:"+ start_change);
+  // print(" end_year:"+end_year+" | end_change:"+ end_change);
 }
 
 void show_page(){
@@ -87,7 +102,7 @@ void show_gridlines(){
   if(show_grid == -1){
     stroke(0);
   } 
-  println(" x:"+mouseX + " y:" + mouseY);
+  // println(" x:"+mouseX + " y:" + mouseY);
 }
 
 void draw_title(){
@@ -123,7 +138,7 @@ void draw_titletabs(){
   page_tabRight[1] = page_tabLeft[1]+20;
   
   for(int i=0 ; i<2 ; i++){
-    fill( i == page? TAB_COLOR : 255);
+    fill( i == page? TAB_color : 255);
     rect(page_tabLeft[i],page_tabTop,page_tabRight[i],page_tabBottom);
     text(title[i], page_tabRight[i]+grid_gap,page_tabBottom);
   }
@@ -143,13 +158,27 @@ void keyPressed(){
   if(key=='S' || key=='s'){ // 'S'ub page
     page = 1;
   }
-  
+  if(key == '2'){
+    selectedColumn += 1;
+    if(selectedColumn >= columnName.length-1){
+    selectedColumn = columnName.length-1;
+    }
+  }
+  if(key == '3'){
+    selectedColumn -= 1;
+    if(selectedColumn <= 0 ){
+      selectedColumn = 0;
+    }
+  }
   // about worldmap_control tab button : changing start or end years
   if(start_change == true){
     if(key == 'U' || key == 'u'){
       start_year += 1;
       if(start_year >= 2017){
         start_year = 2017;
+      }
+      if(start_year >= end_year){
+        start_year = end_year-1;
       }
     }
     if(key == 'D' || key == 'd'){
@@ -171,12 +200,14 @@ void keyPressed(){
       if(end_year <=2000){
         end_year = 2000;
       }
+      if(start_year >= end_year){
+        end_year = start_year+1;
+      }
     }
   }
-    
 }
 
-void mousePressed(){
+void mousePressed(){ // graph1 legend를 활성화시키기 위해서는 legend를 전부 배열에 처리..
   // about page_tab button
   if(mouseY > page_tabTop && mouseY < page_tabBottom){
     for(int i=0 ; i<2 ; i++){
