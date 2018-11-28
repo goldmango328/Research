@@ -9,7 +9,7 @@ Date : 2018.10.23.12:21:00
   ( keyboard : 'M' = Main Page / 'S' = Sub Page / 'V' = visualize gridlines )  
   
 ## 1-1) Main Page ScreenShot
-![main_page](https://user-images.githubusercontent.com/42968884/47333610-7f240f00-d6be-11e8-812a-bb090a400906.JPG)  
+[main_page](https://user-images.githubusercontent.com/42968884/47333610-7f240f00-d6be-11e8-812a-bb090a400906.JPG)  
 #### (1) Section1 :: World Map  
 구성 :  
 - section[0][0] = 20; section[0][1] = 100;  
@@ -42,3 +42,5 @@ Date : 2018.10.23.12:21:00
 
 내용 :  
 
+## 1-2) Process ScreenShot  
+[process_scshot(1)](
