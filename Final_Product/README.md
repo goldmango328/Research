@@ -43,4 +43,5 @@ Date : 2018.10.23.12:21:00
 내용 :  
 
 ## 1-2) Process ScreenShot  
-[process_scshot(1)](
+![process_scshot 1](https://user-images.githubusercontent.com/42968884/49132295-19f7b500-f31f-11e8-8e4b-7c624d2562dc.JPG)  
+Date : 2018.11.28  
