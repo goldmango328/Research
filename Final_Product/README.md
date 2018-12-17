@@ -45,3 +45,6 @@ Date : 2018.10.23.12:21:00
 ## 1-2) Process ScreenShot  
 ![process_scshot 1](https://user-images.githubusercontent.com/42968884/49132295-19f7b500-f31f-11e8-8e4b-7c624d2562dc.JPG)  
 Date : 2018.11.28  
+
+## 1-3) Process ScreenShot  
+Date : 2018.12.05  
