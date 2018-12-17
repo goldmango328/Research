@@ -7,16 +7,19 @@
 /*
 1) main_graph1 : 월별 선택한 속성의 그래프(barchart)
 2) main_graph2 : 지진이 발생한 사건(bubble chart)
+3) main_worldmap : 사진에 위치만 표현하는 용도로 이용
 */
 // SubPage   에서는 무엇을 보여줄 것인지? theme : country data
 /*
+1) sub_worldmap : unfolding으로 지진 발생 지역에 확대, 축소가 가능하도록
+2) sub_graph1 : 상하좌우 사건 정리
 */
 
 int page = 0; // Main = 0, Sub = 1
 int show_grid = -1; //show_grid=1, dont_show_grid=-1
 int grid_gap = 10;
-int main_sectNum = 4;
-int sub_sectNum = 4;
+int main_sectNum = 5;
+int sub_sectNum = 6;
 int[][] main_section = new int [main_sectNum][2];
 int[][] sub_section = new int [sub_sectNum][2];
 
@@ -29,6 +32,18 @@ int[] tabboxLeft = new int[2]; // worldmap_control tab box
 int[] tabboxRight = new int[2];
 int[] texttabboxLeft = new int[2]; // worldmap_control text box
 int[] texttabboxRight = new int[2];
+
+int typeboxNum = 3;
+int typebox_height = grid_gap*3;  int typebox_width;
+int[] typeboxLeft = new int[typeboxNum];
+int[] typeboxRight = new int[typeboxNum];
+int[] typeboxTop = new int[2];
+int[] typeboxBottom = new int[2];
+  
+int subtypeboxLeft;  int subtypeboxRight;
+int[] subtypeboxTop = new int[6];
+int[] subtypeboxBottom = new int[6];
+
 int start_year = 2000;
 int end_year = 2017;
 
@@ -37,33 +52,52 @@ boolean end_change = false; // boolean param asking to change end_year
 
 Table[] NOAA_year = new Table[18]; // 선택하는 년도에 따른 데이터
 Table[] NOAA_country = new Table[97]; // 선택하는 국가에 따른 데이터
+Table CountryName;
+Table CountryCoord;
 
 PFont title_font;
 PFont tab_font;
+PImage WorldMap; 
 
 color TAB_color = #FA7E7E;
 color GRID_color = color(200);
 color BOX_color = color(38,177,250);
 
 String[] columnName = {"DH","MS","IN","DD","HT","HM"};
-int selectedColumn = 0;
+int selectedType = 0;
+int selectedCountry = 4;
 
 void setup(){
   size(1800,800);
   title_font = loadFont("YDIYGO310-48.vlw");
   tab_font = loadFont("YDIYGO350-10.vlw");
   
+  WorldMap = loadImage("DarkMapSliced2.jpg");
+  
+  CountryName = loadTable("countryName.csv","header"); // 데이터에 나타난 국가들의 이름
+  CountryCoord = loadTable("countries.csv","header"); // 국가별 위도 경도 데이터
+  
   // load NOAA_year Table
   for(int year = 0 ; year<18 ; year++){
     NOAA_year[year] = loadTable("NOAA_year["+year+"].csv","header");
   }
+  for(int cnt = 0 ; cnt<97 ; cnt++){
+    NOAA_country[cnt] = loadTable("NOAA_country["+cnt+"].csv","header");
+  }
   
-  main_section[0][0] = 20;   main_section[0][1] = 100;
+  main_section[0][0] = 30;   main_section[0][1] = 100;
   main_section[1][0] = 20;   main_section[1][1] = 480;
   
   main_section[2][0] = 530;  main_section[2][1] = main_section[0][1];
   main_section[3][0] = 530;  main_section[3][1] = main_section[2][1]+460+grid_gap*2;
+  main_section[4][0] = 530;  main_section[4][1] = main_section[2][1]+460+grid_gap*2;
   
+  sub_section[0][0] = 20;                sub_section[0][1] = 100;
+  sub_section[1][0] = 170+grid_gap*2;    sub_section[1][1] = 100;
+  sub_section[2][0] = sub_section[1][0]+1080+grid_gap*2;  sub_section[2][1] = 100;
+  sub_section[3][0] = sub_section[2][0]; sub_section[3][1] = sub_section[2][1]+180+grid_gap*2;
+  sub_section[4][0] = sub_section[2][0]; sub_section[4][1] = sub_section[3][1]+180+grid_gap*2;
+  sub_section[5][0] = sub_section[2][0]; sub_section[5][1] = sub_section[4][1]+180+grid_gap*2;
 }
 
 void draw(){
@@ -73,6 +107,7 @@ void draw(){
   draw_titletabs(); // title tab을 보여주는 함수
   show_page();
   
+  // println("x:"+str(mouseX)+"|y:"+str(mouseY));
   // print("start_year:"+start_year+" | start_change:"+ start_change);
   // print(" end_year:"+end_year+" | end_change:"+ end_change);
 }
@@ -82,8 +117,16 @@ void show_page(){
     draw_worldmap(); // 세계 지도를 보여주는 함수
     draw_graph1();
     draw_graph2();
+    draw_graph3();
   }
   else{
+    draw_selectBar1();
+    draw_selectBar2();
+    draw_selectBar3();
+    draw_subgraph1();
+    draw_subgraph2();
+    draw_subgraph3();
+    draw_subgraph4();
   }
 }
     
@@ -158,26 +201,14 @@ void keyPressed(){
   if(key=='S' || key=='s'){ // 'S'ub page
     page = 1;
   }
-  if(key == '2'){
-    selectedColumn += 1;
-    if(selectedColumn >= columnName.length-1){
-    selectedColumn = columnName.length-1;
-    }
-  }
-  if(key == '3'){
-    selectedColumn -= 1;
-    if(selectedColumn <= 0 ){
-      selectedColumn = 0;
-    }
-  }
-  // about worldmap_control tab button : changing start or end years
+  // about control year tab button : changing start or end years
   if(start_change == true){
     if(key == 'U' || key == 'u'){
       start_year += 1;
       if(start_year >= 2017){
         start_year = 2017;
       }
-      if(start_year >= end_year){
+      if(start_year > end_year){
         start_year = end_year-1;
       }
     }
@@ -200,9 +231,16 @@ void keyPressed(){
       if(end_year <=2000){
         end_year = 2000;
       }
-      if(start_year >= end_year){
+      if(start_year > end_year){
         end_year = start_year+1;
       }
+    }
+  }
+  
+  if(key == 'E'){
+    selectedCountry += 1;
+    if(selectedCountry >= 96){
+      selectedCountry = 0;
     }
   }
 }
@@ -231,5 +269,15 @@ void mousePressed(){ // graph1 legend를 활성화시키기 위해서는 legend�
   else{
     start_change = false;
     end_change = false;
+  }
+  
+  for(int j=0 ; j<2 ; j++){
+    for(int i=0 ; i<typeboxNum ; i++){
+      if(mouseX > typeboxLeft[i] && mouseX < typeboxRight[i]){
+        if(mouseY > typeboxTop[j] && mouseY < typeboxBottom[j]){
+          selectedType = 3*j+i;
+        }
+      }
+    }
   }
 }

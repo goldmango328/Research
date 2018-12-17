@@ -18,7 +18,7 @@ Table mergeintoOneTable(){
     }
   }
   
-  for(int year = start_year ; year < end_year ; year++){
+  for(int year = start_year ; year <= end_year ; year++){
     for(TableRow row : NOAA_year[year-2000].rows()){
       for(TableRow findrows : merge.findRows(str(year),"year")){
         if(findrows.getInt("month") == row.getInt("month")){
@@ -40,7 +40,7 @@ Table mergeintoOneTable(){
 // 보여지는 가장 큰 그래프 -> 형태는? 선형 그래프 / 막대 그래프 
 void draw_graph1(){
   int box_height = 460;
-  int box_width = 1640-main_section[2][0];
+  int box_width = 1640-main_section[2][0]+130;
  
   // int timeline_sx = main_section[3][0]+box_margin;
   // int timeline_ex = main_section[3][0]+box_width-box_margin;
@@ -54,11 +54,11 @@ void draw_graph1(){
   */
   
   draw_VerticalBarChart(mergedData, main_section[2][0], main_section[2][1], main_section[2][0]+box_width, main_section[2][1]+box_height);
-  draw_Legend(columnName,main_section[2][0]+box_width+20,main_section[2][1]+box_height);
   
   stroke(255,120);
   strokeWeight(2);
   line(main_section[2][0], main_section[2][1]+box_height, main_section[2][0]+box_width, main_section[2][1]+box_height);
+
   // Graph1 Guide Lines
   /*
   stroke(255);
@@ -72,4 +72,12 @@ void draw_graph1(){
   textSize(36);
   text("Graph1",(2*main_section[2][0]+box_width)/2,(2*main_section[2][1]+box_height)/2);
   */
+}
+
+// 막대그래프에서 대푯값에 대한 설명
+void show_explain1(){
+  int box_height = 100;
+  int box_width = 100;
+  
+  
 }

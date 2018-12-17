@@ -1,25 +1,25 @@
-// 뱀부차트..? 수직선에다가 버블로 표현하는 차트 그리기
-
-void draw_graph2(){
-  int box_height = 200;
-  int box_width = 1780-main_section[3][0];
+// 대표 사건들만을 보여주는 뱀부 차트
+// main_section[4][0], main_section[4][1]...
+void draw_graph3(){
+  int box_height = 60;
+  int box_width = 1780-main_section[4][0];
   int box_margin = 20;
   
   int timeline_gap = 15;
   int timeline_smallgap = 8;
   int timetext_gap = 10;
   
-  // Graph2 Guide Lines :: main_section[3][0], main_section[3][1]
+  // Graph3 Guide Lines :: main_section[4][0], main_section[4][1]
   /*
   rectMode(CORNERS);
   fill(255,40);
-  rect(main_section[3][0],main_section[3][1],main_section[3][0]+box_width,main_section[3][1]+box_height);
+  rect(main_section[4][0],main_section[4][1],main_section[4][0]+box_width,main_section[4][1]+box_height);
   
   fill(255);
   textAlign(CENTER,CENTER);
   textFont(title_font);
-  textSize(36);
-  text("Graph2",(2*main_section[3][0]+box_width)/2,(2*main_section[3][1]+box_height)/2);
+  textSize(30);
+  text("Graph3",(2*main_section[4][0]+box_width)/2,(2*main_section[4][1]+box_height)/2);
   */
   
   stroke(255,120);
@@ -69,19 +69,17 @@ void draw_graph2(){
       float x = map(total_days,0,360*(end_year-start_year+1),timeline_sx,timeline_ex);
       float value = map(raw_value,5,10,1,30);
       
+      // PROBLEM 1 : 조금 큰 사건들에 대한 표시 -> 어떻게 할 것인가?
+      if(value < 15){
+        continue;
+      }
+      
       fill(typeColor[0],100); // -> value에 따른 명도 조절까지
+      //fill(typeColor[1],50);
       noStroke();
       ellipseMode(CENTER);
       ellipse(x,timelineY,value,value);
       // println(years+":"+months+":"+days+". values:"+raw_value+"\n");
     }
   }
-   
-      
-  // NEED TO BE DEVELOPED (3) MESSAGE 남기기
-  fill(255,40);
-  rect(main_section[3][0], height-60, width-40,height-40);
-  fill(255);
-  textAlign(LEFT,CENTER);
-  text("NEED TO BE DEVELOPED(3)",main_section[3][0]+10,height-50);
 }
