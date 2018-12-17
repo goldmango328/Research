@@ -7,6 +7,8 @@ https://github.com/sejong-interface/Interface_Manual/wiki/Git-%EC%8B%9C%EC%9E%91
 연구에서 이용한 데이터의 종류/속성    
   - NOAA  
     https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1   
+    The Significant Earthquake Database contains information on destructive earthquakes from 2150 B.C. to the present that meet at least one of the following criteria: Moderate damage (approximately $1 million or more), 10 or more deaths, Magnitude 7.5 or greater, Modified Mercalli Intensity X or greater, or the earthquake generated a tsunami.  
+    
   - International Disaster Charter  
     https://disasterscharter.org/web/guest/activations/-/article/earthquake-in-indonesia-activation-580-  
   - NDRCC ( National Disaster Reduction Centre of China )  
