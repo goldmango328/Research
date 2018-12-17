@@ -64,6 +64,9 @@ color GRID_color = color(200);
 color BOX_color = color(38,177,250);
 
 String[] columnName = {"DH","MS","IN","DD","HT","HM"};
+String[] longName = {"DEATHS","MISSING","INJURIES","DAMAGE MILLIONS DOLLARS","HOUSE DESTROYED","HOUSE DAMAGED"};
+String maxTime;
+int maxYear, maxMonth;
 int selectedType = 0;
 int selectedCountry = 4;
 
